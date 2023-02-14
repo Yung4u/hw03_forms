@@ -58,8 +58,8 @@ def post_create(request):
     form = PostForm(request.POST or None)
     if not form.is_valid():
         return render(request,
-                        'posts/includes/create_post.html',
-                        {'form': form})
+                     'posts/includes/create_post.html',
+                     {'form': form})
     post = form.save(commit=False)
     post.author = request.user
     post.save()
